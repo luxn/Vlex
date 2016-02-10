@@ -1,5 +1,8 @@
 #include <iostream>
 #include "graphics/Window.h"
+#include "utils/Timer.h"
+#include "utils/FileUtils.h"
+
 
 int main() {
 
@@ -17,21 +20,42 @@ int main() {
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 
+
+
+	vlex::utils::Timer time; 
+	float timer = 0.0f;
+	int frames = 0;
+
+
 	while (!window.closed()) {
 		window.clear();
 
-#if 0
-		glBegin(GL_TRIANGLES);
-		glVertex2f(-0.5f, -0.5f);
-		glVertex2f(0.0f, 1.0f);
-		glVertex2f(0.5f, -0.5f);
+		glBegin(GL_QUADS);
+			glVertex2f(-0.5f, -0.5f);
+			glVertex2f(0.0f, 1.0f);
+			glVertex2f(0.25f, 0.75f);
+			glVertex2f(0.5f, -0.5f);
 		glEnd();
-#endif
+
 
 		glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
 
-
 		window.update();
+
+
+
+		frames++;
+		if (time.elapsed() - timer > 1.0f) {
+			timer += 1.0f;
+			printf("%d fps\n", frames);
+			frames = 0;
+		}
+
+
 	}
+
+	std::string res = vlex::utils::readFileAsString("main.cpp");
+
+	std::cout << res << std::endl;
 	return 0;
 }
