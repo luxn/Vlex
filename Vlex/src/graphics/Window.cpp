@@ -35,7 +35,7 @@ namespace vlex {
 				std::cout << "Failed: glfwInit()" << std::endl;
 				return false;
 			}
-
+			
 			m_Window = glfwCreateWindow(m_Width, m_Height, m_Title.c_str(), NULL, NULL);
 
 			if (!m_Window) {

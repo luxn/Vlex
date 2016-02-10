@@ -1,21 +1,21 @@
-#pragma once
+﻿#pragma once
 
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
-#define _CRT_SECURE_NO_WARNINGS
 
 namespace vlex {
 	namespace utils {
 
 		static std::string readFileAsString(const std::string &pathToFile) {
-			FILE* file;
-
-			errno_t err = fopen_s(&file, pathToFile.c_str(), "rt");
+			
+			FILE* file = fopen(pathToFile.c_str(), "r");			
 		
-			if (err == 0 || file == nullptr) {
+			if (file == nullptr) {
 				std::cerr << "Could not open or find file at: " << pathToFile << std::endl;
-				return  "Could not open or find file at: " + pathToFile;
+				return "";
 			}
 			fseek(file, 0, SEEK_END);
 			unsigned long length = ftell(file);

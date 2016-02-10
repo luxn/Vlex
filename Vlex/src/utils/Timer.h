@@ -13,8 +13,8 @@ namespace vlex {
 			//clock_t m_start;
 			//clock_t m_timeLast;
 
-			double m_frequency;
-			LARGE_INTEGER m_start;
+			double m_Frequency;
+			LARGE_INTEGER m_Start;
 
 
 		public:
