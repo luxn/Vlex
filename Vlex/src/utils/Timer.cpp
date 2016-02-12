@@ -9,12 +9,16 @@ namespace vlex {
 			QueryPerformanceFrequency(&frequency);
 			m_Frequency = 1.0 / frequency.QuadPart;
 			QueryPerformanceCounter(&m_Start);
+
+			
+
 		}
 		
 
 		void Timer::reset()
 		{
 			QueryPerformanceCounter(&m_Start);
+			
 		}
 
 		float Timer::elapsed()
@@ -25,6 +29,8 @@ namespace vlex {
 			//m_start = current;
 			
 			return (float) (cycles * m_Frequency);
+
+
 		}
 
 	}

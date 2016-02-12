@@ -120,17 +120,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\buffers\IndexBuffer.cpp" />
     <ClCompile Include="src\graphics\shader\Shader.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\graphics\Window.cpp" />
     <ClCompile Include="src\utils\Timer.cpp" />
+    <ClCompile Include="src\graphics\buffers\VertexBuffer.cpp" />
+    <ClCompile Include="src\graphics\buffers\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\buffers\IndexBuffer.h" />
     <ClInclude Include="src\graphics\shader\Shader.h" />
     <ClInclude Include="src\math\Math.h" />
     <ClInclude Include="src\utils\FileUtils.h" />
     <ClInclude Include="src\graphics\Window.h" />
     <ClInclude Include="src\utils\Timer.h" />
+    <ClInclude Include="src\graphics\buffers\VertexBuffer.h" />
+    <ClInclude Include="src\graphics\buffers\VertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\graphics\shader\src\basic.frag" />

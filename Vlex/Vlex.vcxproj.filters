@@ -27,6 +27,15 @@
     <ClCompile Include="src\graphics\shader\Shader.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\buffers\VertexBuffer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\buffers\IndexBuffer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\buffers\VertexArray.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\graphics\Window.h">
@@ -44,9 +53,18 @@
     <ClInclude Include="src\math\Math.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="src\graphics\buffers\VertexBuffer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\buffers\IndexBuffer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\buffers\VertexArray.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\graphics\shader\src\basic.frag" />
     <None Include="src\graphics\shader\src\basic.vert" />
+    <None Include="src\graphics\shader\src\basic.frag" />
   </ItemGroup>
 </Project>

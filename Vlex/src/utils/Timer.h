@@ -2,6 +2,7 @@
 
 //#include <chrono>
 #include <Windows.h>
+//#include <GLFW/glfw3.h>
 
 namespace vlex {
 	namespace utils {
@@ -15,7 +16,6 @@ namespace vlex {
 
 			double m_Frequency;
 			LARGE_INTEGER m_Start;
-
 
 		public:
 			Timer();			

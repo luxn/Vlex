@@ -20,6 +20,11 @@ namespace vlex {
 		}
 
 		void Window::update() {
+
+			//GLenum err = glGetError();
+			//if (err != GL_NO_ERROR)
+			//	std::cout << "OpenGL Err: " << err << std::endl;
+
 			glfwPollEvents();
 
 			glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
