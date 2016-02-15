@@ -20,7 +20,7 @@ namespace vlex {
 			void bind() const;
 			void unbind() const;
 
-			GLuint getCount();
+			inline GLuint getCount() const;
 		};
 
 

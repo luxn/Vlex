@@ -18,6 +18,8 @@ namespace vlex {
 			{
 				delete m_Buffers[i];
 			}
+
+			glDeleteVertexArrays(1, &m_ArrayID);
 		}
 
 

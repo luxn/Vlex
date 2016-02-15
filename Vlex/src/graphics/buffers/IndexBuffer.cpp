@@ -16,6 +16,7 @@ namespace vlex {
 
 		IndexBuffer::~IndexBuffer()
 		{
+			glDeleteBuffers(1, &m_BufferID);
 		}
 
 		void IndexBuffer::bind() const {
@@ -26,9 +27,11 @@ namespace vlex {
 			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
 
-		GLuint IndexBuffer::getCount() {
+		inline GLuint IndexBuffer::getCount() const
+		{
 			return m_Count;
 		}
+				
 
 		
 

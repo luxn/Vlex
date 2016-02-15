@@ -16,6 +16,7 @@ namespace vlex {
 
 		VertexBuffer::~VertexBuffer()
 		{
+			glDeleteBuffers(1, &m_BufferID);
 		}
 
 		void VertexBuffer::bind() const {
