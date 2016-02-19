@@ -120,12 +120,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\layers\SceneLayer.cpp" />
     <ClCompile Include="src\events\InputManager.cpp" />
     <ClCompile Include="src\events\GameEventManager.cpp" />
     <ClCompile Include="src\graphics\buffers\IndexBuffer.cpp" />
+    <ClCompile Include="src\graphics\layers\Group.cpp" />
+    <ClCompile Include="src\graphics\layers\GUILayer.cpp" />
+    <ClCompile Include="src\graphics\layers\ILayer.cpp" />
     <ClCompile Include="src\graphics\renderer\BatchRenderer2D.cpp" />
     <ClCompile Include="src\graphics\shader\Shader.cpp" />
     <ClCompile Include="src\graphics\Sprite.cpp" />
+    <ClCompile Include="src\graphics\Texture.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\graphics\Window.cpp" />
     <ClCompile Include="src\utils\Settings.cpp" />
@@ -134,8 +139,12 @@
     <ClCompile Include="src\graphics\buffers\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\layers\SceneLayer.h" />
     <ClInclude Include="src\events\InputManager.h" />
     <ClInclude Include="src\graphics\buffers\Buffers.h" />
+    <ClInclude Include="src\graphics\layers\Group.h" />
+    <ClInclude Include="src\graphics\layers\GUILayer.h" />
+    <ClInclude Include="src\graphics\layers\ILayer.h" />
     <ClInclude Include="src\graphics\Renderable2D.h" />
     <ClInclude Include="src\graphics\renderer\BatchRenderer2D.h" />
     <ClInclude Include="src\graphics\renderer\IRenderer2D.h" />
@@ -143,9 +152,11 @@
     <ClInclude Include="src\graphics\buffers\IndexBuffer.h" />
     <ClInclude Include="src\graphics\shader\Shader.h" />
     <ClInclude Include="src\graphics\Sprite.h" />
+    <ClInclude Include="src\graphics\Texture.h" />
     <ClInclude Include="src\math\Math.h" />
     <ClInclude Include="src\utils\FileUtils.h" />
     <ClInclude Include="src\graphics\Window.h" />
+    <ClInclude Include="src\utils\ImageUtils.h" />
     <ClInclude Include="src\utils\Settings.h" />
     <ClInclude Include="src\utils\Timer.h" />
     <ClInclude Include="src\graphics\buffers\VertexBuffer.h" />

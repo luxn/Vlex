@@ -10,7 +10,8 @@ namespace vlex {
 		struct VertexData
 		{
 			glm::vec3 vertex;
-			glm::vec4 color;
+			//glm::vec4 color;
+			unsigned int color;
 		};
 
 
@@ -26,14 +27,18 @@ namespace vlex {
 			Renderable2D(glm::vec3 position, glm::vec2 size, glm::vec4 color)
 				:m_Position(position), m_Size(size), m_Color(color)
 			{
-				}
 
-			~Renderable2D()
+			}
+
+			Renderable2D();
+
+		public:
+
+			virtual ~Renderable2D()
 			{
 				
 			}
 		
-		public:
 						
 			inline const glm::vec3& getPosition() const { return m_Position; };
 			inline const glm::vec2& getSize() const { return m_Size; };

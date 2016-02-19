@@ -4,7 +4,7 @@
   <window-title>Vlex Engine</window-title>
   <window-width>900</window-width>
   <window-height>540</window-height>
-  <window-framecap>120</window-framecap>
+  <window-framecap>10000</window-framecap>
   <window-fullscreen>false</window-fullscreen>
   
   <sf-depth-buffer-bits>0</sf-depth-buffer-bits>

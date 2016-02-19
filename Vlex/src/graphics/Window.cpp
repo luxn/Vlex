@@ -14,8 +14,7 @@ namespace vlex {
 		}
 
 		Window::~Window() {
-			delete m_Window;
-			delete m_Settings;
+			delete m_Window;			
 		}
 
 		void Window::update() {
@@ -74,6 +73,8 @@ namespace vlex {
 				std::cout << "Failed: glewInit()" << std::endl;
 				return false;
 			}
+
+			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 			return true;
 
