@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vlex-engine-settings>
+
+  <window-title>Vlex Engine</window-title>
+  <window-width>900</window-width>
+  <window-height>540</window-height>
+  <window-framecap>120</window-framecap>
+  <window-fullscreen>false</window-fullscreen>
+  
+  <sf-depth-buffer-bits>0</sf-depth-buffer-bits>
+  <sf-stencil-buffer-bits>0</sf-stencil-buffer-bits>
+  <sf-antialiasing>0</sf-antialiasing>
+  <sf-opengl-major-version>3</sf-opengl-major-version>
+  <sf-opengl-minor-version>3</sf-opengl-minor-version>
+
+
+  <path-resources path="/res">
+    <shaders>/shaders</shaders>
+    <models>...</models>
+    <textures>...</textures>
+    <sounds>...</sounds>
+    <savegames>...</savegames>
+  </path-resources>
+
+
+
+</vlex-engine-settings>

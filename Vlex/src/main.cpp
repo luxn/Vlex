@@ -9,20 +9,24 @@
 #include "math/Math.h"
 #include "graphics/renderer/BatchRenderer2D.h"
 #include "graphics/Sprite.h"
+#include "utils/Settings.h"
 
 
 int main() {
 
-	std::string title = "VlexEngine";
-	vlex::graphics::SfmlWindow window(title, 960, 540);
 
+	vlex::utils::Settings settings("D:\\VS15Projects\\Vlex\\Vlex\\src\\settings.xml");
+	
+		
+	vlex::graphics::Window window(&settings);
 
+	
 
 	glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 
-	std::cout << "GL_VERSION:    " << glGetString(GL_VERSION)  << std::endl;
-	std::cout << "GL_RENDERER:   " << glGetString(GL_RENDERER) << std::endl;
-	std::cout << "GL_VENDOR:     " << glGetString(GL_VENDOR)   << std::endl;
+	//std::cout << "GL_VERSION:    " << glGetString(GL_VERSION)  << std::endl;
+	//std::cout << "GL_RENDERER:   " << glGetString(GL_RENDERER) << std::endl;
+	//std::cout << "GL_VENDOR:     " << glGetString(GL_VENDOR)   << std::endl;
 
 	
 	vlex::utils::Timer time; 
@@ -42,14 +46,21 @@ int main() {
 
 	srand(std::time(NULL));
 
+	/*
 	for (float y = 0; y < 16.0f; y+=0.1f) {
 		for (float x = 0; x < 16.0f; x+=0.1f) {
 			sprites.push_back(new vlex::graphics::Sprite(x, y, 0.08f, 0.08f, glm::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
 		}	
 	}
+	*/
 
-
-
+	
+	for (float y = 0; y < 16.0f; y+=0.3f) {
+		for (float x = 0; x < 16.0f; x+=0.3f) {
+			sprites.push_back(new vlex::graphics::Sprite(x, y, 0.2f, 0.2f, glm::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
+		}
+	}
+	
 
 
 
@@ -94,6 +105,7 @@ int main() {
 
 
 	}
+
 
 	return 0;
 }

@@ -36,13 +36,19 @@
     <ClCompile Include="src\graphics\buffers\VertexArray.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\events\EventManager.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="src\graphics\renderer\BatchRenderer2D.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="src\graphics\Sprite.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\events\GameEventManager.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\events\InputManager.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Settings.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,9 +77,6 @@
     <ClInclude Include="src\graphics\buffers\VertexArray.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="src\events\EventManager.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="src\graphics\Renderable2D.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -89,9 +92,21 @@
     <ClInclude Include="src\graphics\Sprite.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="src\events\GameEventManager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\InputManager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Settings.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\graphics\shader\src\basic.vert" />
     <None Include="src\graphics\shader\src\basic.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="src\settings.xml" />
   </ItemGroup>
 </Project>

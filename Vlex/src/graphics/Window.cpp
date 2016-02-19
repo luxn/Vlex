@@ -1,94 +1,24 @@
-#include <iostream>
 #include "Window.h"
+#include <iostream>
 
 namespace vlex {
 	namespace graphics {
 
-		/*void windowResize(GLFWwindow* window, int width, int height);
-		
-
-		//----GLFW---
-		GlfwWindow::GlfwWindow(std::string title, int width, int height) {
-			m_Title = title;
-			m_Width = width;
-			m_Height = height;
-
-			if (!init())
-				glfwTerminate();
-		}
-
-		GlfwWindow::~GlfwWindow() {
-			glfwTerminate();
-		}
-
-		void GlfwWindow::update() {
-
-			//GLenum err = glGetError();
-			//if (err != GL_NO_ERROR)
-			//	std::cout << "OpenGL Err: " << err << std::endl;
-
-			glfwPollEvents();
-
-			glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
-			glViewport(0, 0, m_Width, m_Height);
-			glfwSwapBuffers(m_Window);
-
-		}
-
-		bool GlfwWindow::init() {
-
-			
-			if (!glfwInit()) {
-				std::cout << "Failed: glfwInit()" << std::endl;
-				return false;
-			}
-			
-			m_Window = glfwCreateWindow(m_Width, m_Height, m_Title.c_str(), NULL, NULL);
-
-			if (!m_Window) {
-				glfwTerminate();
-				std::cout << "Failed: glfwCreateWindow()" << std::endl;
-				return false;
-			}
-
-			glfwMakeContextCurrent(m_Window);
-			glfwSetWindowSizeCallback(m_Window, windowResize);
-
-			if (glewInit() != GLEW_OK) {
-				std::cout << "Failed: glewInit()" << std::endl;
-				return false;
-			}
-
-			return true;
-
-		}
-
-		bool GlfwWindow::closed() const {
-			return glfwWindowShouldClose(m_Window) == 1;
-		}
-
-		void GlfwWindow::clear() const {
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		}
-		*/
-
-		//---SFML----
-		
-		SfmlWindow::SfmlWindow(std::string title, int width, int height) {
-			m_Title = title;
-			m_Width = width;
-			m_Height = height;
+		Window::Window(utils::Settings* settings)
+			: m_Settings(settings) 
+		{						
 			m_Running = true;
 
 			if (!init())
 				std::cout << "Could not Create and Init SFMLWindow" << std::endl;
 		}
 
-		SfmlWindow::~SfmlWindow() {
+		Window::~Window() {
 			delete m_Window;
+			delete m_Settings;
 		}
 
-		void SfmlWindow::update() {
+		void Window::update() {
 
 			//GLenum err = glGetError();
 			//if (err != GL_NO_ERROR)
@@ -115,16 +45,30 @@ namespace vlex {
 
 		}
 
-		bool SfmlWindow::init() {
+		bool Window::init() {
+			
+			sf::ContextSettings contextSettings(	m_Settings->sfDepthBufferBits,
+													m_Settings->sfStencilBufferBits,
+													m_Settings->sfAntialiasing,
+													m_Settings->sfOpenGLMajorVersion,
+													m_Settings->sfOpenGLMinorVersion);
 
-		
-			m_Window = new sf::Window(sf::VideoMode(m_Width, m_Height), m_Title);
+			unsigned int windowStyle = sf::Style::Default;
+			if (m_Settings->windowFullscreen)
+				windowStyle = sf::Style::Fullscreen;					
+
+			sf::VideoMode videoMode(m_Settings->windowWidth, m_Settings->windowHeight);
+
+
+			m_Window = new sf::Window(videoMode, m_Settings->windowTitle, windowStyle, contextSettings);
 				
-
+			
 			if (!m_Window) {
 				std::cout << "Failed: new sf::Window()" << std::endl;
 				return false;
 			}			
+
+			m_Window->setFramerateLimit(m_Settings->windowFramecap);			
 
 			if (glewInit() != GLEW_OK) {
 				std::cout << "Failed: glewInit()" << std::endl;
@@ -135,25 +79,14 @@ namespace vlex {
 
 		}
 
-		bool SfmlWindow::closed() const {
+		bool Window::closed() const {
 			return !m_Running;
 		}
 
-		void SfmlWindow::clear() const {
+		void Window::clear() const {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
+				
 
-		
-
-
-
-
-
-
-
-
-		/*void windowResize(GLFWwindow* window, int width, int height) {
-			glViewport(0, 0, width, height);
-		}*/
 	}
 }

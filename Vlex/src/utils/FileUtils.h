@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 
 namespace vlex {
@@ -15,7 +16,7 @@ namespace vlex {
 		
 			if (file == nullptr) {
 				std::cerr << "Could not open or find file at: " << pathToFile << std::endl;
-				return "";
+				return ""; //todo
 			}
 			fseek(file, 0, SEEK_END);
 			unsigned long length = ftell(file);
@@ -34,6 +35,7 @@ namespace vlex {
 			delete[] data;
 			return res;
 		}
+		
 
 	}
 }
